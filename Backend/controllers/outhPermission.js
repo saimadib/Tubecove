@@ -39,7 +39,7 @@ passport.deserializeUser(async (id, done) => {
 passport.use(new GoogleStrategy({
   clientID: process.env.clientID,
   clientSecret: process.env.clientSecret,
-  callbackURL: 'http://localhost:5000/api/creator/auth/google/callback',
+  callbackURL: 'https://tubecove.zenservers.tech/api/creator/auth/google/callback',
   userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
 },
 async ( accessToken, refreshToken, profile, done) => {
