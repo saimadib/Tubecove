@@ -8,12 +8,7 @@ const cors=require("cors");
 
 app.use(express.json());
 // CORS configuration
-app.use(cors({
-  origin: "http://localhost:5173",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 204,
-}));
+app.use(cors());
 mongoose.connect(`mongodb+srv://admin-saim:${process.env.MONGO_SECRET}@cluster0.fzd8b5a.mongodb.net/Youedit`);
 
 // Import and use your route handlers here
