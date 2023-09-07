@@ -68,6 +68,7 @@ function SubmissionBox({ submission }) {
       try {
         const url = `${config.base_url}/api/creator/submissions/${submission._id}`;
         const loginRes = await axios.post(url, {}, { headers });
+        alert(loginRes.data.message);
       } catch (error) {
         console.error('Error Deleting:', error);
       }

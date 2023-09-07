@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
-import { Box, Button, TextField, Typography, Autocomplete, Grid } from '@mui/material';
+import { Box, Button, TextField, Typography, Autocomplete, Grid, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
 import Axios from 'axios';
 import config from '../config/config';
 import { useRecoilValue } from 'recoil';
 import { token_editor } from '../Store/Atom/editor';
 import CircularProgress from '@mui/material/CircularProgress';
 
+const MAX_VIDEO_SIZE_GB = 10;
+const MAX_THUMBNAIL_SIZE_MB = 2; // Maximum thumbnail size allowed by YouTube (in megabytes)
+const THUMBNAIL_WIDTH = 1280; // Thumbnail width in pixels
+const THUMBNAIL_HEIGHT = 720; // Thumbnail height in pixels
 
 const SubmitVideo = () => {
   const token = useRecoilValue(token_editor);
@@ -19,6 +23,8 @@ const SubmitVideo = () => {
   const [isLoading, setLoading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [keywords, setKeywords] = useState('');
+  const [isMadeForKids, setIsMadeForKids] = useState(false);
+
 
   const titleLimit = 100;
   const descriptionLimit = 5000;
@@ -44,7 +50,16 @@ const SubmitVideo = () => {
   }, []);
 
   const handleVideoChange = (event) => {
-    setVideoFile(event.target.files[0]);
+    const file = event.target.files[0];
+    if (file) {
+      const fileSizeGB = file.size / (1024 * 1024 * 1024); // Convert bytes to gigabytes
+      if (fileSizeGB > MAX_VIDEO_SIZE_GB) {
+        alert(`Video size exceeds the maximum allowed size of ${MAX_VIDEO_SIZE_GB} GB.`);
+        // Optionally, you can reset the input or show an error message.
+      } else {
+        setVideoFile(file);
+      }
+    }
   };
 
   const handleKeywordsChange = (event) => {
@@ -53,7 +68,26 @@ const SubmitVideo = () => {
 
 
   const handleThumbnailChange = (event) => {
-    setThumbnailFile(event.target.files[0]);
+    const file = event.target.files[0];
+    if (file) {
+      const fileSizeMB = file.size / (1024 * 1024); // Convert bytes to megabytes
+      const img = new Image();
+      img.src = URL.createObjectURL(file);
+      img.onload = () => {
+        const width = img.width;
+        const height = img.height;
+
+        if (fileSizeMB > MAX_THUMBNAIL_SIZE_MB) {
+          alert(`Thumbnail size exceeds the maximum allowed size of ${MAX_THUMBNAIL_SIZE_MB} MB.`);
+          // Optionally, you can reset the input or show an error message.
+        } else if (width !== THUMBNAIL_WIDTH || height !== THUMBNAIL_HEIGHT) {
+          alert(`Thumbnail dimensions must be ${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT} pixels.`);
+          // Optionally, you can reset the input or show an error message.
+        } else {
+          setThumbnailFile(file);
+        }
+      };
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -66,6 +100,8 @@ const SubmitVideo = () => {
     formData.append('video', videoFile);
     formData.append('thumbnail', thumbnailFile);
     formData.append('keywords', keywords);
+    formData.append('isMadeForKids', isMadeForKids);
+
 
     try {
       setLoading(true); // Show loading overlay
@@ -260,8 +296,35 @@ const SubmitVideo = () => {
           </Grid>
         </Grid>
 
+        <FormControl component="fieldset" sx={{ display: 'flex', flexDirection: 'column', marginTop: '30px', marginBottom: '20px' }}>
+          <FormLabel component="legend" sx={{ fontWeight: 'bold', color: 'black !important' }}>Audience</FormLabel>
 
-
+          <Typography sx={{ marginTop: '15px', color: 'gray', fontSize: '13px', maxWidth: '500px' }}>Regardless of your location, you're legally required to comply with the Children's Online Privacy Protection Act (COPPA) and/or other laws. You're required to tell us whether your videos are made for kids.
+            <a href='https://support.google.com/youtube/answer/9528076?hl=en' style={{ color: '#3f50b5', textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">What's content made for kids?</a>
+          </Typography>
+          <Box sx={{ backgroundColor: '#f5f5f5', maxWidth: '500px', margin: '30px 0px 15px 0px' }}>
+            <Typography sx={{ marginTop: '10px', color: 'gray', fontSize: '12px', maxWidth: '600px', marginBottom: '10px', marginLeft: '5px' }}>Features like personalized ads and notifications won’t be available on videos made for kids. Videos that are set as made for kids by you are more likely to be recommended alongside other kids’ videos.
+              <a href='https://support.google.com/youtube/answer/9527654?hl=en' style={{ color: '#3f50b5', textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">Learn more</a>
+            </Typography>
+          </Box>
+          <RadioGroup
+            aria-label="audience"
+            name="audience"
+            value={isMadeForKids.toString()}
+            onChange={(event) => setIsMadeForKids(event.target.value === "true")}
+          >
+            <FormControlLabel
+              value="true"
+              control={<Radio />}
+              label={<span style={{ color: 'black' }}>Yes, it's made for kids.</span>}
+            />
+            <FormControlLabel
+              value="false"
+              control={<Radio />}
+              label={<span style={{ color: 'black' }}>No, it's not made for kids.</span>}
+            />
+          </RadioGroup>
+        </FormControl>
 
 
         <Button type="submit" variant="contained" color="primary" sx={{ backgroundColor: 'black', '&:hover': { backgroundColor: '#393E46' } }}>

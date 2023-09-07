@@ -228,6 +228,7 @@ exports.acceptSubmit = async (req, res) => {
     const videoUrl = pendingVideo.videoUrl; // Assuming this is the S3 URL
     const thumbnailUrl = pendingVideo.thumbnailUrl; // Assuming this is the S3 URL for thumbnail
     const keywords = pendingVideo.keywords;
+    const isMadeForKids=pendingVideo.isMadeForKids;
 
     const keywordsArray = keywords.split(',').map(keyword => keyword.trim());
 
@@ -252,7 +253,8 @@ exports.acceptSubmit = async (req, res) => {
         snippet: {
           title: videoTitle,
           description: videoDescription,
-          tags: keywordsArray
+          tags: keywordsArray,
+          isMadeForKids: isMadeForKids === 'true',
         },
         // Set the privacy status of the video
         status: {
@@ -291,13 +293,11 @@ exports.acceptSubmit = async (req, res) => {
       const emailSent = await sendEmail(toEmail, emailSubject, emailText, emailHtml);
 
       if (emailSent) {
-        console.log('Email sent successfully');
+        return res.json('Uploaded Successfully');
       } else {
-        console.log('Failed to send email');
+        return res.json('Failed to upload video');
       }
     })();
-    
-    return res.json("Success");
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error." });

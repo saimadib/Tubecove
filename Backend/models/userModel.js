@@ -42,9 +42,10 @@ const pendingVideoSchema = new mongoose.Schema({
   creatorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   title: { type: String, required: true },
   description: { type: String, required: true },
-  videoUrl: { type: String, required: true }, // Add video URL field
+  videoUrl: { type: String, required: true }, 
   thumbnailUrl:{ type: String, required: true },
   keywords: { type: String },
+  isMadeForKids: { type: Boolean, required: true },
 }, { timestamps: true });
 
 

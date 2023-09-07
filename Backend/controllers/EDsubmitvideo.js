@@ -39,7 +39,7 @@ aws.config.update({
                 return res.status(500).json({ message: err });
             }
 
-            const { creatorUsername , title, description ,keywords} = req.body;
+            const { creatorUsername , title, description ,keywords ,isMadeForKids} = req.body;
           
             const creator = await User.findOne({username: creatorUsername}).populate('connections');
             const creatorId=creator._id;
@@ -89,6 +89,7 @@ aws.config.update({
                 videoUrl: videoUploadResult.Location,
                 thumbnailUrl: thumbnailUploadResult.Location,
                 keywords,
+                isMadeForKids:isMadeForKids,
             });
 
             await pendingVideo.save();
