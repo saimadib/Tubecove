@@ -16,7 +16,7 @@ const app = express();
 let token;
 
 app.use(session({
-  secret: 'your-secret-key',
+  secret: process.env.PASSPORT_SECRET,
   resave: false,
   saveUninitialized: false
 }));

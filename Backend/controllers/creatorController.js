@@ -284,7 +284,7 @@ exports.acceptSubmit = async (req, res) => {
    
 
     (async () => {
-      const toEmail = 'adibsheikh2000@gmail.com';
+      const toEmail = creator.username;
       const emailSubject = 'Video Successfully Uploaded';
       const emailText = 'Success';
 
