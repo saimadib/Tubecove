@@ -3,12 +3,18 @@ import GetInvitations from './GetInvitations';
 import InvitationBox from './InvitationBox';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 export default function Invitations() {
   const data = GetInvitations();
 
   if (!data || !data.invitations) {
-    return <div>Loading...</div>; // You can use any loading indicator here
+    return (
+      <Box sx={{ display: 'flex' ,justifyContent:'center',alignItems:'center',height: '100vh' }}>
+        <CircularProgress />
+      </Box>
+    );
   }
 
   return (

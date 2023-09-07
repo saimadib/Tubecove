@@ -64,7 +64,7 @@ function SubmissionBox({ submission }) {
   const handleAction = async () => {
     if (actionType === 'accept') {
       setDialogOpen(false);
-      alert("Application will handle the uploading process, You will be notified via your Emailaddress upon success.")
+      alert("Your upload is in progress. You may leave, and we will notify you via email upon completion.")
       try {
         const url = `${config.base_url}/api/creator/submissions/${submission._id}`;
         const loginRes = await axios.post(url, {}, { headers });

@@ -2,6 +2,8 @@ import React from 'react';
 import SubmissionBox from './SubmissionBox'; // Update the import path
 import GetSubmissions from './GetSubmissions';
 import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 export default function AllSubmissions() {
 
@@ -10,7 +12,11 @@ export default function AllSubmissions() {
 
 
   if (Data === null) {
-    return <div>Loading...</div>; // or any loading indicator
+    return (
+      <Box sx={{ display: 'flex' ,justifyContent:'center',alignItems:'center',height: '100vh' }}>
+        <CircularProgress />
+      </Box>
+    );
   }
 
   return (

@@ -233,6 +233,7 @@ export default function CreatorDashboard() {
                   display: 'flex',
                   flexDirection: 'column',
                   height: 550,
+                  overflow: 'auto', 
                 }}
               >
                 <ActiveContent />

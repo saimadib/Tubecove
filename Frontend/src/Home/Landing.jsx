@@ -118,7 +118,7 @@ const LandingPage = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} md={3}>
-                        <img src="https://images.pexels.com/photos/3643925/pexels-photo-3643925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Connect Icon" style={{ width: "320px", height: "180px", borderRadius: '10px' }} />
+                        <img src={'connect.jpg'} alt="Connect Icon" style={{ width: "320px", height: "180px", borderRadius: '10px' }} />
                         <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
                             Connect
                         </Typography>
