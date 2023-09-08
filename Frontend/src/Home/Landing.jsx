@@ -7,6 +7,8 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 
+
+
 import CustomAppBar from './Appbar';
 
 const DarkGlassBox = styled(Box)({
@@ -17,6 +19,12 @@ const DarkGlassBox = styled(Box)({
     border: '1px solid rgba(255, 255, 255, 0.18)',
 });
 
+
+const styles={
+    image1:{
+
+    },
+}
 
 
 const LandingPage = () => {
@@ -80,12 +88,15 @@ const LandingPage = () => {
 
                     </Grid>
                     <Grid item xs={12} md={5}>
-                    <img
-                                src={'undraw_youtube_tutorial_re_69qc.svg'}
-                                alt="Logo"
-                                height="540"
-                                style={{ marginTop: '60px',marginLeft:'60px', cursor: 'pointer' }}
-                            />
+                        <img 
+                            id='image1'
+                            src={'undraw_youtube_tutorial_re_69qc.svg'}
+                            alt="Logo"
+                            height="540"
+                            style={{
+                                marginTop: '60px', marginLeft: '60px', cursor: 'pointer'
+                            }}
+                        />
                     </Grid>
                 </Grid>
             </Container>
@@ -188,12 +199,12 @@ const LandingPage = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <img
-                                src={'undraw_multitasking_re_ffpb.svg'}
-                                alt="Logo"
-                                height="350"
-                                style={{ marginTop: '10px',marginLeft:'70px', cursor: 'pointer' }}
-                            />
-                        </Grid>
+                            src={'undraw_multitasking_re_ffpb.svg'}
+                            alt="Logo"
+                            height="350"
+                            style={{ marginTop: '10px', marginLeft: '70px', cursor: 'pointer' }}
+                        />
+                    </Grid>
                 </Grid>
 
             </div>
@@ -207,10 +218,10 @@ const LandingPage = () => {
                     padding: 0,
                 }}
             >
-                <Typography variant="h4" gutterBottom align="center" sx={{ mb: 3, color: 'black',paddingTop:'80px' ,fontWeight:"bold"}}>
+                <Typography variant="h4" gutterBottom align="center" sx={{ mb: 3, color: 'black', paddingTop: '80px', fontWeight: "bold" }}>
                     Get Started as an Editor or Creator
                 </Typography>
-                <Grid container spacing={2} justifyContent="space-around" sx={{marginTop:'100px'}}>
+                <Grid container spacing={2} justifyContent="space-around" sx={{ marginTop: '100px' }}>
                     <Grid item xs={12} md={4}>
                         <DarkGlassBox name='Editor' sx={{ p: 2 }}>
                             <Typography variant="h4" gutterBottom align="center" sx={{ mb: 3, color: 'black' }}>

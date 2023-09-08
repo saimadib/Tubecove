@@ -7,6 +7,8 @@ import EditorSignIn from './Editor/Login';
 import EditorSignUp from './Editor/Singup';
 import CreatorDashboard from './Creator/Dashboard';
 import EditorDashboard from './Editor/Dashboard';
+import CreatorForgotPassword from './Creator/ForgotPassword';
+import EditorForgotPassword from './Editor/ForgotPassword';
 
 function App() {
  
@@ -21,6 +23,8 @@ function App() {
                 <Route path="/editor/signup" element={<EditorSignUp />} />
                 <Route path="/creator/dashboard" element={<CreatorDashboard />} />
                 <Route path="/editor/dashboard" element={<EditorDashboard />} />
+                <Route path="/creator/forgotpassword" element={<CreatorForgotPassword/>}/>
+                <Route path="/editor/forgotpassword" element={<EditorForgotPassword/>}/>
             </Routes>
         </Router>
     </RecoilRoot>

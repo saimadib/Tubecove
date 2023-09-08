@@ -14,6 +14,8 @@ const {
 
 const {getPermission,callbackFunction}=require("../controllers/outhPermission");
 
+const {initiatePass ,resetPassword,setPassword}=require("../controllers/resetPassword");
+
 
 
 
@@ -27,5 +29,8 @@ router.route("/submissions").get(authCreator,submissions);
 router.route("/submissions/:videoId").get(authCreator,preview);
 router.route("/submissions/:submissionId").post(authCreator,acceptSubmit);
 router.route("/submissions/:submissionId").delete(deleteSubmit);
+router.route("/forgotpassword").post(initiatePass);
+router.route("/resetpassword").get(resetPassword);
+router.route("/resetpassword").post(setPassword);
 
 module.exports = router;

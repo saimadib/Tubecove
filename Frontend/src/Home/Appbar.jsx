@@ -22,8 +22,8 @@ const CustomAppBar = () => {
         <AppBar position="fixed" sx={{ backgroundColor: 'white', color: 'black' }}>
             <Toolbar>
                 <Grid container alignItems="center">
-                    <Grid item xs={1.45} />
-                    <Grid item xs={1} >
+                    <Grid item xs={0} md={1.45} />
+                    <Grid item md={1} >
                         <a href="/" style={{ textDecoration: 'none' }}>
                             <img
                                 src={'logo-removebg-preview.png'}
@@ -33,11 +33,11 @@ const CustomAppBar = () => {
                             />
                         </a>
                     </Grid>
-                    <Grid item xs={5.8} />
-                    <Grid item xs={1.2}>
+                    <Grid item xs={0}  md={5.8} />
+                    <Grid item md={1.2}>
                         <Button color="inherit" onClick={scrollToHowitWorks}>How It Works</Button>
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item md={2}>
                         <Button variant="contained" color="primary" sx={{ backgroundColor: "#000000", '&:hover': { backgroundColor: '#393E46' } }} onClick={scrollToLoginSignup}>
                             Get Started
                         </Button>

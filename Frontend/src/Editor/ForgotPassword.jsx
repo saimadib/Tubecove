@@ -35,33 +35,28 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
-export default function CreatorSignIn() 
+export default function EditorForgotPassword() 
 {
-    const [passwordError, setPasswordError] = useState("");
     const [emailError, setEmailError] = useState("");
     const navigate = useNavigate();
-    const setCurrentToken=useSetRecoilState(token_local);
 
     const handleSubmit = async(event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     
-    const newUser = {   username: data.get('email'), password: data.get('password'), };
-    const url = config.base_url + "/api/creator/login";
+    const newUser = {   email: data.get('email') };
+    const url = config.base_url + "/api/editor/forgotpassword";
     const loginRes = await Axios.post(url, newUser);
 
     if (loginRes.data.status === "fail") {
     setEmailError(loginRes.data.message);
-    setPasswordError(loginRes.data.message);
-    } else {
-      localStorage.setItem("auth-token-creator", loginRes.data.token);
-      const token=localStorage.getItem("auth-token-creator");
-      setCurrentToken(token);
-      navigate('/creator/dashboard')
+    } 
+    else {
+      alert(loginRes.data.message);
+      navigate('/editor/login');
     }
 
   };
@@ -100,7 +95,7 @@ export default function CreatorSignIn()
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-           Creator  Sign in
+           Editor  Forgot Password
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -115,38 +110,18 @@ export default function CreatorSignIn()
               helperText={emailError}
               autoFocus
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              error={passwordError.length > 0 ? true : false}
-              helperText={passwordError}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+            
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Forgot Password
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="/creator/forgotpassword" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
-                <Link href="/creator/signup" variant="body2">
+                <Link href="/editor/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

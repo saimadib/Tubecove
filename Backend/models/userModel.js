@@ -23,6 +23,8 @@ const userSchema = new Schema(
     googleId: String,
     accessToken: String,
     refreshToken: String,
+    passwordResetToken: String,
+  passwordResetTokenExpires: Date,
   },
   {
     timestamps: true,

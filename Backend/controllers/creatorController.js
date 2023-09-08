@@ -177,7 +177,7 @@ async function sendEmail(to, subject, text, html) {
   try {
     // Define the email data
     const mailOptions = {
-      from: 'dolbyvid@gmail.com',
+      from: emailUsername,
       to: to,
       subject: subject,
       text: text, 
