@@ -41,6 +41,7 @@ const defaultTheme = createTheme();
 export default function EditorForgotPassword() 
 {
     const [emailError, setEmailError] = useState("");
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async(event) => {
@@ -119,6 +120,28 @@ export default function EditorForgotPassword()
             >
               Forgot Password
             </Button>
+            {loading && (
+                <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+                  <Box
+                    sx={{
+                      position: 'fixed',
+                      top: '0',
+                      left: '0',
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      zIndex: '9999',
+                    }}
+                  >
+
+                    <CircularProgress variant="indeterminate" size={80} thickness={6} color="primary" />
+
+                  </Box>
+                </Box>
+              )}
             <Grid container>
               <Grid item>
                 <Link href="/editor/signup" variant="body2">
