@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
+import Footer from './Footer';
 
 
 
@@ -53,7 +54,7 @@ const LandingPage = () => {
 
 
     return (
-        <div style={{ scrollBehavior: "smooth" }}>
+        <div style={{ scrollBehavior: "smooth" ,width:'100%',margin:0 }}>
             <CustomAppBar />
             <Container sx={{
                 height: '100vh',
@@ -262,6 +263,7 @@ const LandingPage = () => {
                 </Grid>
 
             </div>
+                <Footer/>
         </div>
     );
 };
