@@ -22,7 +22,7 @@ exports.initiatePass = async (req, res) => {
     const user = await User.findOne({ username: email });
 
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({  status: "fail", message: 'User not found' });
     }
 
     const role = user.role.toLowerCase();
@@ -47,7 +47,7 @@ exports.initiatePass = async (req, res) => {
     res.status(200).json({ message: 'Password reset email sent.' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({  error: 'Internal server error' });
   }
 };
 
@@ -61,7 +61,7 @@ exports.resetPassword = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(400).json({ message: 'Invalid or expired token' });
+      return res.status(400).json({  status: "fail", message: 'Invalid or expired token' });
     }
 
     const formHTML = `
@@ -178,7 +178,7 @@ exports.setPassword = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(400).json({ message: 'Invalid or expired token' });
+      return res.status(400).json({ status: "fail", message: 'Invalid or expired token' });
     }
   
     const salt = await bcrypt.genSalt(10);
