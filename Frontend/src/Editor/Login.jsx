@@ -135,7 +135,7 @@ export default function EditorSignIn() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Forgot Password
+                Sign In
               </Button>
               <Grid container>
                 <Grid item xs>

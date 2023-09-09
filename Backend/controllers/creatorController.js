@@ -295,9 +295,9 @@ exports.acceptSubmit = async (req, res) => {
       const emailSent = await sendEmail(toEmail, emailSubject, emailText, emailHtml);
 
       if (emailSent) {
-        return res.json('Uploaded Successfully');
+        return res.json({message:'Uploaded Successfully'});
       } else {
-        return res.json('Failed to upload video');
+        return res.json({message:'Failed to upload video'});
       }
     })();
   } catch (error) {
