@@ -165,7 +165,9 @@ const emailAppPassword = process.env.Email_app_password;
 
 // Create a transporter object using your Google Workspace SMTP settings
 const transporter = nodemailer.createTransport({
-  service: 'Gmail', // or your email service provider
+  host: 'smtp.hostinger.com', 
+  port: 465, 
+  secure: true,
   auth: {
     user: emailUsername,
     pass: emailAppPassword,

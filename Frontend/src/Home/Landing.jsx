@@ -116,7 +116,7 @@ const LandingPage = () => {
                     How it works in 3 steps
                 </Typography>
                 <Typography variant="h6" align="center" sx={{ mb: 4, marginBottom: '100px', paddingTop: '10px', maxWidth: '800px', marginLeft: '350px', fontSize: '17px' }}>
-                    Effortlessly collaborate, review, and streamline video projects with Tubecove, simplifying the creative journey for video creators and editors.
+                    Effortlessly collaborate, review, and streamline video projects with Tubesynchub, simplifying the creative journey for video creators and editors.
                 </Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={1.5} />

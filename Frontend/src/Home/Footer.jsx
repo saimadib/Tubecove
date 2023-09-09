@@ -88,11 +88,11 @@ const Footer = () => {
         <Typography variant="body2" color="text.primary" align="center">
           © 2023 Copyright:
           <Link
-            href="https://tubecove.zenservers.com/"
+            href="https://tubesynchub.tech/"
             color="inherit"
             underline="none"
           >
-            Tubecove.com
+            Tubesynchub.tech
           </Link>
         </Typography>
       </Container>

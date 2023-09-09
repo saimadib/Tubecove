@@ -8,7 +8,9 @@ const emailUsername = process.env.Email_username;
 const emailAppPassword = process.env.Email_app_password;
 
 const transporter = nodemailer.createTransport({
-  service: 'Gmail',
+  host: 'smtp.hostinger.com', 
+  port: 465, 
+  secure: true, 
   auth: {
     user: emailUsername,
     pass: emailAppPassword,
@@ -34,10 +36,10 @@ exports.initiatePass = async (req, res) => {
     user.passwordResetTokenExpires = expirationTime;
     await user.save();
 
-    const resetLink = `https://tubecove.zenservers.tech/api/${role}/resetpassword?token=${token}`;
+    const resetLink = `https://tubesynchub.tech/api/${role}/resetpassword?token=${token}`;
     const mailOptions = {
       from: emailUsername,
-      to: user.username,
+      to: email,
       subject: 'Password Reset',
       text: `You are receiving this email because you (or someone else) requested a password reset for your account.\n\nPlease click on the following link to reset your password:\n\n${resetLink}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.\n`,
     };
@@ -135,7 +137,7 @@ exports.resetPassword = async (req, res) => {
                   const token=document.getElementById("token").value;
       
                  
-                  fetch("https://tubecove.zenservers.tech/api/creator/resetpassword", {
+                  fetch("https://tubesynchub.tech/api/creator/resetpassword", {
                       method: "POST",
                       body: JSON.stringify({ newPassword, token }),
                       headers: {
