@@ -12,7 +12,6 @@ const classes = {
   link: {
     textDecoration: 'none',
     color: 'black',
-
   },
 };
 
@@ -24,37 +23,42 @@ const Footer = () => {
       height: '300px',
     }}>
     <Paper sx={{backgroundColor: '#deded5',width:'100%', paddingBottom:'50px'}}>
-      <Container >
-        <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100px' }}>
-          <Grid item md={2} >
+      <Container sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center' ,height: '200px'}}>
+        <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',alignContent:'space-evenly'}}>
+    
+          <Grid item md={1.0} >
             <Typography variant="h6">
               <Link href="#" sx={classes.link}>
                 About us
               </Link>
             </Typography>
           </Grid>
-          <Grid item md={2}>
+          <Grid item xs= {0.5} ></Grid>
+          <Grid item md={1}>
             <Typography variant="h6">
               <Link href="#" sx={classes.link}>
                 Products
               </Link>
             </Typography>
           </Grid>
-          <Grid item md={2}>
+          <Grid item xs= {0.5} ></Grid>
+          <Grid item md={1}>
             <Typography variant="h6">
               <Link href="#" sx={classes.link}>
                 Awards
               </Link>
             </Typography>
           </Grid>
-          <Grid item md={2}>
+          <Grid item xs= {0.5} ></Grid>
+          <Grid item md={1}>
             <Typography variant="h6">
               <Link href="#" sx={classes.link}>
                 Help
               </Link>
             </Typography>
           </Grid>
-          <Grid item md={2}>
+          <Grid item xs= {0.5}></Grid>
+          <Grid item md={1}>
             <Typography variant="h6">
               <Link href="#" sx={classes.link}>
                 Contact
