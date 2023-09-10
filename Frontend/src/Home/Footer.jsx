@@ -22,7 +22,7 @@ const Footer = () => {
     <div style={{
       height: '300px',
     }}>
-    <Paper sx={{backgroundColor: '#deded5',width:'100%', paddingBottom:'50px'}}>
+    <Paper sx={{backgroundColor: '#deded5',width:'100%', paddingBottom:'50px', paddingTop:'25px'}}>
       <Container sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center' ,height: '200px'}}>
         <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',alignContent:'space-evenly'}}>
     

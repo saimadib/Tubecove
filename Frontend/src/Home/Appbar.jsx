@@ -23,21 +23,23 @@ const CustomAppBar = () => {
             <Toolbar>
                 <Grid container alignItems="center">
                     <Grid item xs={0} md={1.45} />
-                    <Grid item md={1} >
+                    <Grid item xs={4} md={1} >
                         <a href="/" style={{ textDecoration: 'none' }}>
                             <img
                                 src={'logo-removebg-preview.png'}
                                 alt="Logo"
                                 height="40"
+                                width="100%"
                                 style={{ marginTop: '5px', cursor: 'pointer' }}
                             />
                         </a>
                     </Grid>
-                    <Grid item xs={0}  md={5.8} />
-                    <Grid item md={1.2}>
+                    <Grid item xs={2}  md={5} />
+                    <Grid item xs={0.6} md={1.2}>
                         <Button color="inherit" onClick={scrollToHowitWorks}>How It Works</Button>
                     </Grid>
-                    <Grid item md={2}>
+                    <Grid item xs={2} md={0.1} />
+                    <Grid item xs={2} md={1.1}>
                         <Button variant="contained" color="primary" sx={{ backgroundColor: "#000000", '&:hover': { backgroundColor: '#393E46' } }} onClick={scrollToLoginSignup}>
                             Get Started
                         </Button>

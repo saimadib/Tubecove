@@ -28,7 +28,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
     alignItems: 'center',
     fontFamily: 'Camphor, sans-serif',
     backgroundColor: 'white', // Change background color to white
-    marginTop: '60px',
+    marginTop: '70px',
     [theme.breakpoints.between(690, 720)]: {
         // Add your styles for mobile devices here
         '& h2': {
@@ -39,7 +39,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
         },
         '& img': {
             width: '100vw',
-            marginTop: '30px',
+            marginTop: '10px',
         },
     },
 }));
@@ -108,8 +108,9 @@ const LandingPage = () => {
                             id='image1'
                             src={'undraw_youtube_tutorial_re_69qc.svg'}
                             alt="Logo"
+                            align='center'
                             style={{
-                                marginTop: '60px', cursor: 'pointer', width: '80%',
+                                marginTop: '10px', cursor: 'pointer', width: '80%',
                                 height: '60vh'
                             }}
                         />
