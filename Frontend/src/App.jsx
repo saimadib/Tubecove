@@ -9,6 +9,10 @@ import CreatorDashboard from './Creator/Dashboard';
 import EditorDashboard from './Editor/Dashboard';
 import CreatorForgotPassword from './Creator/ForgotPassword';
 import EditorForgotPassword from './Editor/ForgotPassword';
+import AboutUs from './Home/Aboutus';
+import PrivacyPolicy from './Home/Privacy';
+import ContactUs from './Home/Contact';
+import TermsOfUse from './Home/Terms';
 
 function App() {
  
@@ -25,6 +29,10 @@ function App() {
                 <Route path="/editor/dashboard" element={<EditorDashboard />} />
                 <Route path="/creator/forgotpassword" element={<CreatorForgotPassword/>}/>
                 <Route path="/editor/forgotpassword" element={<EditorForgotPassword/>}/>
+                <Route path="/about-us" element={<AboutUs/>}/>
+                <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+                <Route path="/contact-us" element={<ContactUs/>}/>
+                <Route path="/terms-of-use" element={<TermsOfUse/>}/>
             </Routes>
         </Router>
     </RecoilRoot>

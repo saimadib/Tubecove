@@ -27,40 +27,40 @@ const Footer = () => {
         <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',alignContent:'space-evenly'}}>
     
           <Grid item md={1.0} >
-            <Typography variant="h6">
-              <Link href="#" sx={classes.link}>
+            <Typography variant="h6" sx={{fontSize:'15px'}}>
+              <Link href="/about-us" sx={classes.link}>
                 About us
               </Link>
             </Typography>
           </Grid>
           <Grid item xs= {0.5} ></Grid>
-          <Grid item md={1}>
-            <Typography variant="h6">
-              <Link href="#" sx={classes.link}>
-                Products
+          <Grid item md={1.4}>
+            <Typography variant="h6" sx={{fontSize:'15px'}}>
+              <Link href="/privacy-policy" sx={classes.link}>
+                Privacy Policy
               </Link>
             </Typography>
           </Grid>
           <Grid item xs= {0.5} ></Grid>
           <Grid item md={1}>
-            <Typography variant="h6">
+            <Typography variant="h6" sx={{fontSize:'15px'}}>
               <Link href="#" sx={classes.link}>
-                Awards
+                Pricing
               </Link>
             </Typography>
           </Grid>
           <Grid item xs= {0.5} ></Grid>
-          <Grid item md={1}>
-            <Typography variant="h6">
-              <Link href="#" sx={classes.link}>
-                Help
+          <Grid item md={1.3}>
+            <Typography variant="h6" sx={{fontSize:'15px'}}>
+              <Link href="/terms-of-use" sx={classes.link}>
+                Terms of Use
               </Link>
             </Typography>
           </Grid>
           <Grid item xs= {0.5}></Grid>
           <Grid item md={1}>
-            <Typography variant="h6">
-              <Link href="#" sx={classes.link}>
+            <Typography variant="h6" sx={{fontSize:'15px'}}>
+              <Link href="/contact-us" sx={classes.link}>
                 Contact
               </Link>
             </Typography>
