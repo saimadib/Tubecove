@@ -32,20 +32,16 @@ const PrivacyPolicy = () => {
                         We may collect the following types of information from users of our platform:
                     </Typography>
                     <ul>
-                        <li style={{}}>
-                            <strong>User Authentication Data:</strong> When you sign up or log in to the platform as a content creator or video editor, we collect certain personal information, including your  email address, and other account-related details. This information is necessary for user authentication and account management.
+                        <li>
+                        <Typography variant="body1" ><strong>Creator Channel Permissions:</strong> Content creators may grant permissions to our platform to access and upload videos directly to their YouTube channels. This includes access to video files, thumbnails, titles, and descriptions. We do not store or retain your YouTube channel login credentials.</Typography>
                         </li>
                         <br/>
                         <li>
-                            <strong>Creator Channel Permissions:</strong> Content creators may grant permissions to our platform to access and upload videos directly to their YouTube channels. This includes access to video files, thumbnails, titles, and descriptions. We do not store or retain your YouTube channel login credentials.
+                        <Typography variant="body1" > <strong>Connection Establishment Data:</strong> When creators invite video editors to collaborate via their usernames, we facilitate the connection by sharing the necessary information between users. This information is used solely for establishing connections on our platform.</Typography>
                         </li>
                         <br/>
                         <li>
-                            <strong>Connection Establishment Data:</strong> When creators invite video editors to collaborate via their usernames, we facilitate the connection by sharing the necessary information between users. This information is used solely for establishing connections on our platform.
-                        </li>
-                        <br/>
-                        <li>
-                            <strong>Video Submission Data:</strong> Video editors can submit videos along with associated metadata, such as thumbnails, titles, and descriptions. This data is used for the submission and approval workflow within our platform.
+                        <Typography variant="body1" > <strong>Video Submission Data:</strong> Video editors can submit videos along with associated metadata, such as thumbnails, titles, and descriptions. This data is used for the submission and approval workflow within our platform.</Typography>
                         </li>
                     </ul>
 
@@ -57,28 +53,25 @@ const PrivacyPolicy = () => {
                         We use the collected information for the following purposes:
                     </Typography>
                     <ul>
+                        
                         <li>
-                            <strong>User Authentication:</strong> To verify your identity and provide access to our platform.
+                        <Typography variant="body1" ><strong>Creator Channel Permissions:</strong> To enable direct video uploads to YouTube channels, as granted by content creators.</Typography>
                         </li>
                         <br/>
                         <li>
-                            <strong>Creator Channel Permissions:</strong> To enable direct video uploads to YouTube channels, as granted by content creators.
+                        <Typography variant="body1" ><strong>Connection Establishment:</strong> To facilitate connections between content creators and video editors on our platform.</Typography>
                         </li>
                         <br/>
                         <li>
-                            <strong>Connection Establishment:</strong> To facilitate connections between content creators and video editors on our platform.
+                        <Typography variant="body1" ><strong>Video Submission:</strong> To allow video editors to submit videos for review and approval by content creators.</Typography>
                         </li>
                         <br/>
                         <li>
-                            <strong>Video Submission:</strong> To allow video editors to submit videos for review and approval by content creators.
+                        <Typography variant="body1" ><strong>Creator Approval Workflow:</strong> To enable content creators to review and verify submitted videos and schedule them for uploading to their YouTube channels.</Typography>
                         </li>
                         <br/>
                         <li>
-                            <strong>Creator Approval Workflow:</strong> To enable content creators to review and verify submitted videos and schedule them for uploading to their YouTube channels.
-                        </li>
-                        <br/>
-                        <li>
-                            <strong>Communication:</strong> To send notifications and updates related to platform activities.
+                        <Typography variant="body1" ><strong>Communication:</strong> To send notifications and updates related to platform activities.</Typography>
                         </li>
                     </ul>
 
