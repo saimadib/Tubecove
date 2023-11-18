@@ -13,6 +13,7 @@ import AboutUs from './Home/Aboutus';
 import PrivacyPolicy from './Home/Privacy';
 import ContactUs from './Home/Contact';
 import TermsOfUse from './Home/Terms';
+import GoogleAPI from './Home/GoogleAPI';
 
 function App() {
  
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                 <Route path="/contact-us" element={<ContactUs/>}/>
                 <Route path="/terms-of-use" element={<TermsOfUse/>}/>
+                <Route path="/google-api-disclosure" element={<GoogleAPI/>}/>
             </Routes>
         </Router>
     </RecoilRoot>

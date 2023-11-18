@@ -42,6 +42,14 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs= {0.5} ></Grid>
+          <Grid item md={1.6}>
+            <Typography variant="h6" sx={{fontSize:'15px'}}>
+              <Link href="/google-api-disclosure" sx={classes.link}>
+               Google API Disclosure  
+              </Link>
+            </Typography>
+          </Grid>
+          <Grid item xs= {0.5} ></Grid>
           <Grid item md={1}>
             <Typography variant="h6" sx={{fontSize:'15px'}}>
               <Link href="#" sx={classes.link}>
