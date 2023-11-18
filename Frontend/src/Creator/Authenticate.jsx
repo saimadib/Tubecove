@@ -57,26 +57,26 @@ function DashboardComponent() {
           variant="h6"
           sx={{ fontSize: '20px', marginBottom: '25px' ,maxWidth:'600px'}}
         >
-         <strong>&bull;</strong> To get started, click the "Authenticate" button below.
+         <strong>&bull;</strong> To get started, click the "Youtube" button below.
         </Typography>
 
         <Button
           variant="contained"
           onClick={handleSubmit}
+          startIcon={<img src={'/yt_logo.png'} style={{width: '100%', height: '100%', objectFit: 'cover' }} alt="YouTube Logo" />}
           sx={{
             width: '200px',
             height: '60px',
-            backgroundColor: '#000000',
+            backgroundColor: 'white',
             borderRadius: '10px',
             fontSize: '15px',
             color: '#ffffff',
             '&:hover': {
-              backgroundColor: '#393E46', // Darker color on hover
+              backgroundColor: 'white', // Darker color on hover
             },
             marginBottom:'30px'
           }}
         >
-          Authenticate
         </Button>
       
       </Grid>
